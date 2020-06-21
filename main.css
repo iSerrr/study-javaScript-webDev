@@ -1,0 +1,85 @@
+button {
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+}
+textarea {
+  resize: none;
+  padding: 15px;
+  font-size: 15px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.content * {
+  margin: 5px;
+}
+.test__anim {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(800px);
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border: 5px solid #ac1f1f;
+  border-radius: 50%;
+  /* transform: rotate3d(0, 1, 0, 85deg); */
+  animation: rotate 3s linear infinite;
+}
+.litle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  animation: rotate1 3s linear infinite;
+  transform: translate(-50%, -50%);
+}
+.litle2 {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  animation: rotate2 3s linear infinite;
+  transform: translate(-50%, -50%);
+}
+.text {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 190px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate3d(1, 1, 0, 360deg);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: translate(-50%, -50%) rotate3d(1, 1, 1, 360deg);
+  }
+}
